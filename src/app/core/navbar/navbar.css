@@ -1,0 +1,12 @@
+/* Logo un poco más grande */
+.logo {
+  width: 55px;
+  height: auto;
+}
+
+/* Letras más negras y ligeramente más grandes */
+.nav-link.text-dark {
+  color: #000 !important;
+  font-weight: 600;
+  font-size: 1rem;
+}

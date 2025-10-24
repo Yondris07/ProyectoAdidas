@@ -1,0 +1,26 @@
+<section class="productos-container">
+    <!-- Banner promocional -->
+    <div
+        class="bg-light text-center py-2 border-top border-bottom d-flex justify-content-center align-items-center gap-2">
+        <span class="fw-bold text-dark">
+            TU EXPERIENCIA PERSONALIZADA. INICIA SESIÓN Y DESCÚBRELA.
+        </span>
+        <i class="bi bi-arrow-right text-dark fs-5"></i>
+    </div>
+
+    <div class="imagen-fondo">
+        <img src="../../../assets/img/fotoFondo.png" alt="Fondo">
+    </div>
+
+    <div class="cards">
+        @for (item of productos; track $index) {
+        <div class="card" (click)="navigation(item.id)">
+            <img [src]="item.imagen">
+            <h3>{{item.nombre}}</h3>
+            <p class="precio">${{item.precio}}</p>
+            <button>Agregar al carrito</button>
+        </div>
+        }
+
+    </div>
+</section>

@@ -1,0 +1,33 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+        @for (item of product.imagen; track $index; let index = $index) {
+        <button type="button" [attr.data-bs-target]="'#carouselExampleIndicators'" [attr.data-bs-slide-to]="index"
+            [ngClass]="{'active': index === activeImage}" aria-current="true" aria-label="Slide {{index + 1}}">
+        </button>
+        }
+    </div>
+
+    <!-- Imágenes -->
+    <div class="carousel-inner rounded-3 shadow">
+        @for (item of product.imagen; track $index; let index = $index) {
+        <div class="carousel-item" [ngClass]="{'active': index === activeImage}"
+            [ngStyle]="{'background': index===activeImage?'red':'black'}">
+            <img class="d-block w-100" [src]="item" alt="Imagen {{index + 1}}">
+        </div>
+        }
+    </div>
+
+    <!-- Botón anterior -->
+    <button class="carousel-control-prev custom-btn" type="button" (click)="removeOne()">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <!-- Botón siguiente -->
+    <button class="carousel-control-next custom-btn" type="button" (click)="oneAdd()">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+
+</div>
+<h1 class="text-center mt-4">{{product.nombre}}</h1>
